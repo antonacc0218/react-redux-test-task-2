@@ -1,0 +1,15 @@
+sudo: false
+
+language: node_js
+node_js:
+  - 9
+
+branches:
+  only:
+    - master
+
+deploy:
+  provider: heroku
+  app: "react-redux-test-2"
+  api_key:
+    secure: "82d327c9-0022-4ad0-aaf7-fa0f6ae84921"

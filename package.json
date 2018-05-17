@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "test task #2",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "start": "npm run build && node server.js",
+    "local": "webpack-dev-server --mode development --open",
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
   },
@@ -33,6 +34,7 @@
     "webpack-md5-hash": "0.0.6"
   },
   "dependencies": {
+    "express": "^4.16.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   }
