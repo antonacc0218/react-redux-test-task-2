@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "author": "artbocha",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
