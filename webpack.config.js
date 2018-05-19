@@ -9,6 +9,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
   },
+  resolve: {
+    alias: {
+      '../../theme.config$': path.join(__dirname, 'semantic-theme/theme.config')
+    }
+  },
   module: {
     rules: [
       {
@@ -19,9 +24,17 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader']
-      }
+        test: /\.(less|css)$/,
+        use: ['css-hot-loader', MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+      },
+      {
+        test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,
+        use: 'file-loader?name=[name].[ext]?[hash]'
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/fontwoff'
+      },
     ]
   },
   plugins: [
