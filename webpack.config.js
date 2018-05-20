@@ -7,7 +7,8 @@ module.exports = {
   entry: { main: './src/index.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash].js',
+    publicPath: '/',
   },
   resolve: {
     alias: {
@@ -36,6 +37,9 @@ module.exports = {
         loader: 'url-loader?limit=10000&mimetype=application/fontwoff'
       },
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new MiniCssExtractPlugin({

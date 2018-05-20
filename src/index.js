@@ -1,12 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Header } from 'semantic-ui-react';
 import 'semantic-ui-less/semantic.less';
+import App from './App';
 import './style.less';
 
-const Index = () => <Header as='h1'>Hello semantic ui react</Header>;
-
 render(
-  <Index />,
+  <App />,
   document.getElementById('root')
 );
