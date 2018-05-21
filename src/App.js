@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 import { routes } from './routes';
-import NavBar from './components/Navbar';
+import HeaderMenu from './containers/HeaderMenuContainer';
 
 const App = () => {
   const renderSwitch = () => (
@@ -24,7 +24,7 @@ const App = () => {
   return (
     <Router>
       <React.Fragment>
-        <NavBar routes={routes.filter(route => route.isNavBar)}></NavBar>
+        <HeaderMenu routes={routes.filter(route => route.isNavBar)}></HeaderMenu>
         <Container className='main'>
           {renderSwitch()}
         </Container>
