@@ -57,7 +57,7 @@ class Login extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthorized: state.isAuthorized
+  isAuthorized: state.user.isAuthorized
 });
 
 const mapDispatchToProps = dispatch => ({

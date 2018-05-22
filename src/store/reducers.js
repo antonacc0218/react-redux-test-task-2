@@ -1,15 +1,34 @@
-import { AUTHORIZATION_SUCCESS, AUTHORIZATION_FAIL, SIGN_OUT } from './createActions';
+import { combineReducers } from 'redux';
 
-const auth = (state = false, action) => {
+import * as type from './actionCreator';
+
+const user = (state = {}, action) => {
   switch (action.type) {
-    case AUTHORIZATION_SUCCESS:
-      return { isAuthorized: true, userId: action.payload };
-    case SIGN_OUT:
-    case AUTHORIZATION_FAIL:
+    case type.AUTHORIZATION_SUCCESS:
+      return { isAuthorized: true, id: action.payload };
+    case type.SIGN_OUT:
+    case type.AUTHORIZATION_FAIL:
       return { isAuthorized: false };
+    case type.USER_INFO_FETCH_SUCCESS:
+      return Object.assign({}, state, { info: action.payload });
     default:
       return state;
   }
 };
 
-export default auth;
+const isLoading = (state = false, action) => {
+  switch (action.type) {
+    case type.AUTHORIZATION_REQUEST:
+      return true;
+    case type.AUTHORIZATION_SUCCESS:
+    case type.AUTHORIZATION_FAIL:
+      return false;
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({
+  user,
+  isLoading
+});

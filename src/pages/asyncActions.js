@@ -1,20 +1,29 @@
 import { httpRequest } from '../services/httpService';
+import { mapUserInfo } from '../mapper.js';
+import * as action from './../store/actionCreator';
 
-export const logIn = (data, failCb) => (dispatch) => (
-  httpRequest('https://mysterious-reef-29460.herokuapp.com/api/v1/validate', 'POST', data)
+const URL = 'https://mysterious-reef-29460.herokuapp.com/api/v1';
+
+export const logIn = (data, failCb) => dispatch => {
+  dispatch(action.authorizationRequest());
+  httpRequest(`${URL}/validate`, 'POST', data)
     .then(res => res.data)
     .then(res => {
-      dispatch({
-        type: 'AUTHORIZATION_SUCCESS',
-        payload: res.data.id
-      });
+      dispatch(action.authorizationSuccess(res.data.id));
     })
     .catch(err => {
-      dispatch({
-        type: 'AUTHORIZATION_FAIL',
-        payload: err,
-        error: true
-      });
       failCb();
+      dispatch(action.authorizationFail(err));
+    });
+};
+
+export const getUserInfo = (id) => dispatch => {
+  dispatch(action.userInfoFetchRequest());
+  httpRequest(`${URL}/user-info/${id}`)
+    .then(res => {
+      dispatch(action.userInfoFetchSuccess(mapUserInfo(res.data.data)));
     })
-);
+    .catch(err => {
+      dispatch(action.userInfoFetchFail(err));
+    });
+};
