@@ -28,7 +28,17 @@ const isLoading = (state = false, action) => {
   }
 };
 
+const news = (state = [], action) => {
+  switch (action.type) {
+    case type.NEWS_FETCH_SUCCESS:
+      return [...action.payload];
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   user,
-  isLoading
+  isLoading,
+  news
 });

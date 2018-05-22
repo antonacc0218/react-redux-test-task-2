@@ -27,3 +27,14 @@ export const getUserInfo = (id) => dispatch => {
       dispatch(action.userInfoFetchFail(err));
     });
 };
+
+export const getNews = () => dispatch => {
+  dispatch(action.newsFetchRequest());
+  httpRequest(`${URL}/news`)
+    .then(res => {
+      dispatch(action.newsFetchSuccess(res.data.data));
+    })
+    .catch(err => {
+      dispatch(action.newsFetchFail(err));
+    });
+};

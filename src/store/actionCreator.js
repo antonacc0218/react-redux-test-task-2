@@ -7,6 +7,11 @@ export const USER_INFO_FETCH_REQUEST = 'USER_INFO_FETCH_REQUEST';
 export const USER_INFO_FETCH_SUCCESS = 'USER_INFO_FETCH_SUCCESS';
 export const USER_INFO_FETCH_FAIL = 'USER_INFO_FETCH_FAIL';
 
+export const NEWS_FETCH_REQUEST = 'NEWS_FETCH_REQUEST';
+export const NEWS_FETCH_SUCCESS = 'NEWS_FETCH_SUCCESS';
+export const NEWS_FETCH_FAIL = 'NEWS_FETCH_FAIL';
+
+
 export const signOut = () => ({
   type: SIGN_OUT
 });
@@ -37,6 +42,21 @@ export const userInfoFetchSuccess = (data) => ({
 
 export const userInfoFetchFail = (error) => ({
   type: USER_INFO_FETCH_FAIL,
+  payload: error,
+  error: true
+});
+
+export const newsFetchRequest = () => ({
+  type: NEWS_FETCH_REQUEST
+});
+
+export const newsFetchSuccess = (data) => ({
+  type: NEWS_FETCH_SUCCESS,
+  payload: data
+});
+
+export const newsFetchFail = (error) => ({
+  type: NEWS_FETCH_FAIL,
   payload: error,
   error: true
 });
