@@ -23,7 +23,7 @@ class HeaderMenuContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthorized: state.user.isAuthorized
+  isAuthorized: Boolean(state.user.id)
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -22,7 +22,7 @@ const ProtectedComponent = (WrappedComponent) => {
 
   const mapStateToProps = (state) => (
     {
-      isAuthorized: state.user.isAuthorized
+      isAuthorized: Boolean(state.user.id)
     }
   );
 

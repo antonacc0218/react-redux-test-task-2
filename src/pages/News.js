@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Header, Item, Label, Icon } from 'semantic-ui-react';
+import { Header, Item, Label, Icon, Loader } from 'semantic-ui-react';
 import { getNews } from './asyncActions';
 
 
 class News extends React.Component {
   static propTypes = {
+    isLoading: PropTypes.bool,
     getNews: PropTypes.func.isRequired,
     news: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number,
@@ -22,6 +23,7 @@ class News extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Loader active={this.props.isLoading}/>
         <Header as='h1'>News</Header>
         <Item.Group>
           {this.props.news.map(el =>
@@ -42,7 +44,8 @@ class News extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  news: state.news
+  news: state.news.list,
+  isLoading: state.news.isLoading
 });
 
 const mapDispatchToProps = dispatch => ({

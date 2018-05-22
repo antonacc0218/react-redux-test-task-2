@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Item } from 'semantic-ui-react';
+import { Item, Loader } from 'semantic-ui-react';
 import { getUserInfo } from './asyncActions';
 import UserInfo from '../components/UserInfo';
 
@@ -10,7 +10,8 @@ class Profile extends React.Component {
   static propTypes = {
     userId: PropTypes.number,
     getUserInfo: PropTypes.func.isRequired,
-    userInfo: PropTypes.object
+    userInfo: PropTypes.object,
+    isLoading: PropTypes.bool
   }
 
   componentDidMount() {
@@ -22,23 +23,26 @@ class Profile extends React.Component {
   }
 
   render() {
-    if (this.props.userInfo) {
-      return (
+    return (
+      <React.Fragment>
+        <Loader active={this.props.isLoading}/>
+        {this.props.userInfo &&
         <Item>
           <Item.Header as='h1'>Profile</Item.Header>
           <Item.Content>
             <UserInfo userInfo={this.props.userInfo}/>
           </Item.Content>
         </Item>
-      );
-    }
-    return null;
+        }
+      </React.Fragment>
+    );
   }
 }
 
 const mapStateToProps = state => ({
   userId: state.user.id,
-  userInfo: state.user.info
+  userInfo: state.user.info,
+  isLoading: state.user.isLoading
 });
 
 const mapDispatchToProps = dispatch => ({
