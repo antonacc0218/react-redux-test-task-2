@@ -13,6 +13,7 @@ export const routes = [
     name: 'Profile',
     path: '/profile',
     isNavBar: true,
+    isPrivate: true,
     component: Profile
   },
   {
