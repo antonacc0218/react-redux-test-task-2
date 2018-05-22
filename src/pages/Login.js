@@ -24,18 +24,19 @@ class Login extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const { email, password } = this.state;
+    const failCb = () => this.setState({ password: '' });
 
     this.props.logIn({
       email,
       password
-    });
+    }, failCb);
   }
 
   render() {
     const { isAuthorized } = this.props;
 
     if (isAuthorized) {
-      return <Redirect to='/' />;
+      return <Redirect to='/profile' />;
     }
 
     const { email, password, } = this.state;
@@ -60,7 +61,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logIn: (params) => dispatch(logIn(params))
+  logIn: (params, failCb) => dispatch(logIn(params, failCb))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
