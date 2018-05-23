@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 import { routes } from './routes';
 import HeaderMenu from './containers/HeaderMenuContainer';
+import NotificationBarContainer from './containers/NotificationBarContainer';
 import ProtectedComponent from './containers/ProtectedComponent';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
       <React.Fragment>
         <HeaderMenu routes={routes.filter(route => route.isNavBar)}></HeaderMenu>
         <Container className='main'>
+          <NotificationBarContainer/>
           {renderSwitch()}
         </Container>
       </React.Fragment>

@@ -56,11 +56,25 @@ const news = (state = initNewsState, action) => {
   }
 };
 
+const notifications = (state = [], action) => {
+  switch (action.type) {
+    case type.NOTIFICATION_POSITIVE_ADD:
+      return [...state, { value: action.payload }];
+    case type.NOTIFICATION_ERROR_ADD:
+      return [...state, { value: action.payload, isError: true }];
+    case type.NOTIFICATION_REMOVE_BY_INDEX:
+      return state.filter((el, index) => index !== action.payload);
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   user: combineReducers({
     id: userId,
     info: userInfo,
     isLoading: userLoading
   }),
-  news
+  news,
+  notifications
 });

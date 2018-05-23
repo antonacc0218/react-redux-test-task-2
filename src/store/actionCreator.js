@@ -11,6 +11,9 @@ export const NEWS_FETCH_REQUEST = 'NEWS_FETCH_REQUEST';
 export const NEWS_FETCH_SUCCESS = 'NEWS_FETCH_SUCCESS';
 export const NEWS_FETCH_FAIL = 'NEWS_FETCH_FAIL';
 
+export const NOTIFICATION_POSITIVE_ADD = 'NOTIFICATION_POSITIVE_ADD';
+export const NOTIFICATION_ERROR_ADD = 'NOTIFICATION_ERROR_ADD';
+export const NOTIFICATION_REMOVE_BY_INDEX = 'NOTIFICATION_REMOVE_BY_INDEX';
 
 export const signOut = () => ({
   type: SIGN_OUT
@@ -60,3 +63,19 @@ export const newsFetchFail = (error) => ({
   payload: error,
   error: true
 });
+
+export const notificationRemoveByIndex = (index) => ({
+  type: NOTIFICATION_REMOVE_BY_INDEX,
+  payload: index
+});
+
+export const notificationPositiveAdd = (message) => ({
+  type: NOTIFICATION_POSITIVE_ADD,
+  payload: message
+});
+
+export const notificationErrorAdd = (message) => ({
+  type: NOTIFICATION_ERROR_ADD,
+  payload: message
+});
+
