@@ -23,7 +23,7 @@ class News extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Loader active={this.props.isLoading}/>
+        <Loader active={this.props.isLoading} size='medium'>Loading</Loader>
         <Header as='h1'>News</Header>
         <Item.Group>
           {this.props.news.map(el =>

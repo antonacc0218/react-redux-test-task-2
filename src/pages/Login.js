@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Grid, Form, Segment, Button, Loader } from 'semantic-ui-react';
+import { Dimmer, Grid, Form, Segment, Button, Loader } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom';
 import { logIn } from './asyncActions';
 
@@ -52,7 +52,9 @@ class Login extends React.Component {
             </Segment>
           </Form>
         </Grid.Column>
-        <Loader active={isLoading}/>
+        <Dimmer active={isLoading}>
+          <Loader size='medium'>Loading</Loader>
+        </Dimmer>
       </Grid>
     );
   }

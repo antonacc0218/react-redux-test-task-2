@@ -25,7 +25,7 @@ class Profile extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Loader active={this.props.isLoading}/>
+        <Loader active={this.props.isLoading} size='medium'>Loading</Loader>
         {this.props.userInfo &&
         <Item>
           <Item.Header as='h1'>Profile</Item.Header>

@@ -8,7 +8,7 @@ const LogInBtn = (props) => {
     return <Button onClick={props.signOut}>Log Out</Button>;
   }
 
-  return <NavLink to='/login'><Button>Log In</Button></NavLink>;
+  return <NavLink to='/login'><Button color='green'>Log In</Button></NavLink>;
 };
 
 LogInBtn.propTypes = {
