@@ -20,9 +20,17 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: [
+          'babel-loader',
+          {
+            loader: 'eslint-loader',
+            options: {
+              enforce: 'pre',
+              emitWarning: true,
+              emitError: false
+            }
+          }
+        ]
       },
       {
         test: /\.(less|css)$/,
@@ -35,7 +43,7 @@ module.exports = {
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url-loader?limit=10000&mimetype=application/fontwoff'
-      },
+      }
     ]
   },
   devServer: {
