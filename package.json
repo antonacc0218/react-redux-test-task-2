@@ -7,15 +7,15 @@
     "local": "webpack-dev-server --mode development --open",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "test": "set NODE_ENV=test&&jest"
+    "test": "set NODE_ENV=test&&jest",
+    "test-coverage": "set NODE_ENV=test&&jest --coverage",
+    "test-reset": "npm test -- -u"
   },
   "jest": {
-    "setupFiles": [
-      "./tools/testSetup.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "collectCoverageFrom": ["src/**/*.{ts,js}"],
+
+    "setupFiles": ["./tools/testSetup.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "author": "artbocha",
   "license": "MIT",
