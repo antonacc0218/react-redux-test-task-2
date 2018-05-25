@@ -26,7 +26,7 @@ class News extends React.Component {
         <Loader active={this.props.isLoading} size='medium'>Loading</Loader>
         <Header as='h1'>News</Header>
         <Item.Group>
-          {this.props.news.map(el =>
+          {this.props.news.ap(el =>
             <Item key={el.id}>
               <Item.Content>
                 <Item.Header as='h2'>{el.title}</Item.Header>
