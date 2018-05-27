@@ -5,7 +5,7 @@ import NavBar from './NavigationBar';
 import LogInBtn from './LogInBtn';
 
 const HeaderMenu = (props) => (
-  <Menu className='nav-bar' fixed='top' inverted>
+  <Menu className='nav-bar' inverted>
     <Container>
       <Menu.Menu position='left'>
         <NavBar routes={props.routes}/>
