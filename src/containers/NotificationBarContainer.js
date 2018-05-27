@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { notificationRemoveByIndex } from 'actionCreators';
 import NotificationBar from '../components/NotificationBar';
+import { notificationRemoveByIndex } from '../store/actionCreator';
 
 class NotificationBarContainer extends React.Component {
   static propTypes = {

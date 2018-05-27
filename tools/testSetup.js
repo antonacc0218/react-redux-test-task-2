@@ -8,5 +8,3 @@ Enzyme.configure({ adapter: new Adapter() });
 global.shallow = shallow;
 global.render = render;
 global.mount = mount;
-
-// TODO Code coverage should be more than 90 percent

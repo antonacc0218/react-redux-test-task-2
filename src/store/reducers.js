@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import * as type from 'actionCreators';
+import * as type from './actionCreator';
 
 const userId = (state = null, action) => {
   switch (action.type) {

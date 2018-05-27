@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Header, Item, Label, Icon, Loader } from 'semantic-ui-react';
-import { getNews } from 'asyncActions';
+import { getNews } from './asyncActions';
 
 
 class News extends React.Component {
