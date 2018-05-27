@@ -45,8 +45,4 @@ const mapStateToProps = state => ({
   isLoading: state.user.isLoading
 });
 
-const mapDispatchToProps = dispatch => ({
-  getUserInfo: (id) => dispatch(getUserInfo(id))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, { getUserInfo })(Profile);

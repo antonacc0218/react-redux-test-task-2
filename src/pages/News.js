@@ -48,8 +48,4 @@ const mapStateToProps = state => ({
   isLoading: state.news.isLoading
 });
 
-const mapDispatchToProps = dispatch => ({
-  getNews: () => dispatch(getNews())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(News);
+export default connect(mapStateToProps, { getNews })(News);

@@ -26,8 +26,4 @@ const mapStateToProps = state => ({
   isAuthorized: Boolean(state.user.id)
 });
 
-const mapDispatchToProps = dispatch => ({
-  signOut: () => dispatch(signOut())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderMenuContainer);
+export default connect(mapStateToProps, { signOut })(HeaderMenuContainer);

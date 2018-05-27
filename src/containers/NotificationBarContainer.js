@@ -24,8 +24,7 @@ const mapStateToProps = state => ({
   notifications: state.notifications
 });
 
-const mapDispatchToProps = dispatch => ({
-  removeMessage: (index) => dispatch(notificationRemoveByIndex(index))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(NotificationBarContainer);
+export default connect(
+  mapStateToProps,
+  { removeMessage: notificationRemoveByIndex }
+)(NotificationBarContainer);

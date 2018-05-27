@@ -65,8 +65,4 @@ const mapStateToProps = state => ({
   isLoading: state.user.isLoading
 });
 
-const mapDispatchToProps = dispatch => ({
-  logIn: (params, failCb) => dispatch(logIn(params, failCb))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, { logIn })(Login);
