@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Message } from 'semantic-ui-react';
 import './style.less';
 
+// TODO disappearance of notification after a while
 class NotificationBar extends React.Component {
   static propTypes = {
     notifications: PropTypes.array,

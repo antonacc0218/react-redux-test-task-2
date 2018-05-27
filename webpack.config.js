@@ -12,7 +12,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '../../theme.config$': path.join(__dirname, 'semantic-theme/theme.config')
+      '../../theme.config$': path.join(__dirname, 'semantic-theme/theme.config'),
+      actionCreators: path.join(__dirname, './src/store/actionCreators'),
+      asyncActions: path.join(__dirname, './src/store/asyncActions')
     }
   },
   module: {
