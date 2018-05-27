@@ -1,6 +1,6 @@
+import * as action from 'actionCreators';
+import { mapUserInfo } from '../mapper';
 import { httpRequest } from '../services/httpService';
-import { mapUserInfo } from '../mapper.js';
-import * as action from './../store/actionCreator';
 
 const URL = 'https://mysterious-reef-29460.herokuapp.com/api/v1';
 
@@ -14,6 +14,7 @@ const checkResponse = response => {
   throw new Error('Something wrong');
 };
 
+// TODO divide actions by modules
 export const logIn = (data, failCb) => dispatch => {
   dispatch(action.authorizationRequest());
   httpRequest(`${URL}/validate`, 'POST', data)

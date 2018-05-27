@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Dimmer, Grid, Form, Segment, Button, Loader } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom';
-import { logIn } from './asyncActions';
+import { logIn } from 'asyncActions';
 
 class Login extends React.Component {
   static propTypes = {
