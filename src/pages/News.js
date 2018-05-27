@@ -25,7 +25,7 @@ class News extends React.Component {
       <React.Fragment>
         <Loader active={this.props.isLoading} size='medium'>Loading</Loader>
         <Header as='h1'>News</Header>
-        <Item.Group>
+        <Item.Group divided>
           {this.props.news.map(el =>
             <Item key={el.id}>
               <Item.Content>
