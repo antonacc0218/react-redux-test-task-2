@@ -27,7 +27,7 @@ npm install
 To run app
 
 ```shell
-npm start
+npm run local
 ```
 
 # Test
