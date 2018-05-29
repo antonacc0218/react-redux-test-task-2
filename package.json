@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "test task #2",
   "scripts": {
-    "start": "npm run build && node server.js",
-    "local": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --mode development --open",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "test": "set NODE_ENV=test&&jest",
-    "test-coverage": "set NODE_ENV=test&&jest --coverage",
-    "test-reset": "npm test -- -u"
+    "test-coverage": "npm test --coverage",
+    "test-reset": "npm test -- -u",
+    "release": "npm test && npm run build && node server.js"
   },
   "jest": {
     "collectCoverageFrom": ["src/**/*.{ts,js}"],

@@ -8,6 +8,8 @@ branches:
   only:
     - master
 
+script:
+  - npm run release
 deploy:
   provider: heroku
   app: "react-redux-test-2"
