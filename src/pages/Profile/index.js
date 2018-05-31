@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Item, Loader } from 'semantic-ui-react';
-import { getUserInfo } from 'asyncActions';
-import UserInfo from '../components/UserInfo';
+import UserInfo from 'components/UserInfo';
+import { getUserInfo } from './actions';
 
 
 class Profile extends React.Component {

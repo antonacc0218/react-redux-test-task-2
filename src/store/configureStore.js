@@ -1,6 +1,6 @@
 import { applyMiddleware, createStore, compose } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+import rootReducer from './rootReducer';
 import { loadState, saveState } from './sessionStorage';
 
 const initialState = loadState();

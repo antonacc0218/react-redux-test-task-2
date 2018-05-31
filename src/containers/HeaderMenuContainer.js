@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { signOut } from 'actionCreators';
-import HeaderMenu from '../components/HeaderMenu';
+import { signOut } from 'pages/Login/actions';
+import HeaderMenu from 'components/HeaderMenu';
 
 class HeaderMenuContainer extends React.Component {
   static propTypes = {

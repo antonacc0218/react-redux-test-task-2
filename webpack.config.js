@@ -13,8 +13,11 @@ module.exports = {
   resolve: {
     alias: {
       '../../theme.config$': path.join(__dirname, 'semantic-theme/theme.config'),
-      actionCreators: path.join(__dirname, './src/store/actionCreators'),
-      asyncActions: path.join(__dirname, './src/store/asyncActions')
+      actions: path.join(__dirname, './src/store/actions'),
+      actionTypes: path.join(__dirname, './src/store/actionTypes'),
+      components: path.join(__dirname, './src/components'),
+      helpers: path.join(__dirname, './src/helpers'),
+      pages: path.join(__dirname, './src/pages')
     }
   },
   module: {
